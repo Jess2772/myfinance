@@ -1,7 +1,7 @@
 # convert complex model/data into simple python data types
 from rest_framework import serializers
 from .models import *
-
+from django.contrib.auth import get_user_model, authenticate
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
@@ -17,8 +17,6 @@ class TransactionTypesSerializer(serializers.ModelSerializer):
         model = TransactionTypes
         fields = '__all__'
 
-from rest_framework import serializers
-from django.contrib.auth import get_user_model, authenticate
 
 UserModel = get_user_model()
 
